@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="01_nav_footer.css">
+  <link rel="stylesheet" href="02_home.css">
+  <title>Cinema</title>
+</head>
+<body>
+<!-- Modal -->
+<!-- 모달기능은 항상 최상단에 놓는다.-->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">로그인</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <div class="mb-3">
+          <label for="username">이메일 ID</label>
+          <input type="email" class="form-control my-2" id="username">
+          </div>
+          <div class="mb-3">
+          <label for="Password" class="form-label">비밀번호</label>
+          <input type="password" class="form-control my-2" id="Password">
+          </div>
+          <div class="mb-3">
+          <input type="checkbox" class="form-check-input" id="check_me">
+          <label class="form-check-label" for="check_me">Check me out</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        <button type="submit" class="btn btn-primary">로그인</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- navbar 시작-->
+  <nav class="navbar navbar-expand-md bg-light navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="02_home.html"><img class="nav_logo"src="images/logo.png"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="02_home.html">홈</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="03_community.html">게시판</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal" aria-expanded="false">
+              로그인
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 02_home.html -->
+  <header>
+    <!-- carousel - slide 만들기 -->
+    <div id="movie_slide" class="carousel slide" data-bs-ride="carousel">
+      <!-- indicators  -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#movie_slide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#movie_slide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#movie_slide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <!-- image(item)-->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/header1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/header2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="images/header3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+    <!-- carousel control -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#movie_slide" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#movie_slide" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </header>
+
+  <h1 class="text-center my-5">추천 목록</h1>
+
+  <div class="container mb-3">
+    <section class="row" style="margin: 0px 80px;">
+      <article class="col-12 col-sm-4 mb-3">
+        <div class="card">
+          <img src="images/movie7.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">한산: 용의 출현</h5>
+            <p class="card-text">나라의 운명을 바꿀 압도적 승리의 전투가 시작된다!
+              1592년 4월, 조선은 임진왜란 발발 후 단 15일 만에 왜군에 한양을 빼앗기며 절체절명의 위기에 놓인다...</p>
+          </div>
+        </div>
+      </article>
+      <article class="col-12 col-sm-4 mb-3">
+        <div class="card">
+          <img src="images/movie8.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">미니언즈2</h5>
+            <p class="card-text">세계 최고의 슈퍼 악당을 꿈꾸는 미니보스 ‘그루’와 그를 따라다니는 미니언들.
+              어느 날 그루는 최고의 악당 조직 ‘빌런6’의 마법 스톤을 훔치는데 성공하지만...</p>
+          </div>
+        </div>
+      </article>
+      <article class="col-12 col-sm-4 mb-3">
+        <div class="card">
+          <img src="images/movie9.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">탑건: 매버릭</h5>
+            <p class="card-text">한순간의 실수도 용납되지 않는 하늘 위,
+              가장 압도적인 비행이 시작된다!
+              최고의 파일럿이자 전설적인 인물 매버릭(톰 크루즈)은 자신이 졸업한 훈련학교...</p>
+          </div>
+        </div>
+      </article>
+      <article class="col-12 col-sm-4 mb-3">
+        <div class="card">
+          <img src="images/movie10.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">외계+인 1부</h5>
+            <p class="card-text">“아주 오래전부터 외계인은 그들의 죄수를
+              인간의 몸에 가두어 왔다”
+              2022년 현재, ‘가드’(김우빈)’와 ‘썬더’는 인간의 몸에...</p>
+          </div>
+        </div>
+      </article>
+      <article class="col-12 col-sm-4 mb-3">
+        <div class="card">
+          <img src="images/movie11.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">헤어질 결심</h5>
+            <p class="card-text">
+              산 정상에서 추락한 한 남자의 변사 사건.
+               담당 형사 '해준'(박해일)은
+               사망자의 아내 '서래'(탕웨이)와 마주하게...</p>
+          </div>
+        </div>
+      </article>
+      <article class="col-12 col-sm-4 mb-3">
+        <div class="card">
+          <img src="images/movie12.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">비상선언</h5>
+            <p class="card-text">베테랑 형사 팀장 인호(송강호)는 비행기 테러 예고 영상 제보를 받고 사건을 수사하던 중
+              용의자가 실제로 KI501 항공...</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <!-- footer -->
+  <footer class="fixed-bottom text-center mb-1">Web-bootstrap PTJ by choi</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>  
+</body>
+</html>
