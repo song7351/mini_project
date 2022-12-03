@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>DETAIL</h1>
+  <hr>
+  <div>
+    <h5>{{ movie.title }}</h5>
+    <p>{{ movie.description }}</p>
+    {% comment %} 로그인한 유저가 해당 게시글의 유저와 동일한 경우에 수정 가능. {% endcomment %}
+    {% if user == movie.user %}
+      <a href="{% url 'movies:update' movie.pk %}">UPDATE</a>
+      <form action="{% url 'movies:delete' movie.pk %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">DELETE</button>
+      </form>
+    {% endif %}
+  </div>
+  <a href="{% url 'movies:index' %}">BACK</a>
+  <hr>
+  <h4>댓글 목록</h4>
+  <ul>
+    {% for comment in comments %}
+      <li>
+        {{ comment.content }}
+        {% if user == comment.user %}
+          <form action="{% url 'movies:comments_delete' movie.pk comment.pk %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            <input type="submit" value="DELETE">
+          </form>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  <hr>
+  <form action="{% url 'movies:comments_create' movie.pk %}" method="POST">
+    {% csrf_token %}
+    {{ comment_form }}
+    <input type="submit">
+  </form>
+{% endblock  %}

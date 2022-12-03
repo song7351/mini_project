@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+ 
+{% block content %} 
+  <h1>Movies</h1> 
+  {% for movie in movies %} 
+    <h3>{{ movie.title }}</h3> 
+    <p> 
+      {% for genre in movie.genres.all %} 
+        <span>{{ genre.name }}</span> 
+      {% endfor %} 
+    </p> 
+    {% if movie.overview %} 
+      <p>{{ movie.overview|truncatechars:60 }}</p> 
+    {% else %} 
+      <p>줄거리 없음</p> 
+    {% endif %} 
+    <a href="{% url 'movies:detail' movie.pk %}">[detail]</a> 
+    <hr> 
+  {% endfor %} 
+   
+{% endblock %}

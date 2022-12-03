@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      {% comment %} 로그인했을 경우에는 보여줄 nav {% endcomment %}
+      {% if user.is_authenticated %}
+        <h3>Hello, {{ user.username }}</h3>
+        <a href="{% url 'accounts:update' %}">회원정보수정</a>
+        <form action="{% url 'accounts:logout' %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" value="Logout">
+        </form>
+        <form action="{% url 'accounts:delete' %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" value="회원탈퇴">
+        </form>
+      {% comment %} 로그아웃 상태일때 nav {% endcomment %}
+      {% else %}
+        <a href="{% url 'accounts:login' %}">Login</a>
+        <a href="{% url 'accounts:signup' %}">Signup</a>
+      {% endif %}
+    </nav>
+    <hr>
+    <div>
+      {% block content %}
+      {% endblock content %}
+    </div>
+  </body>
+</html>

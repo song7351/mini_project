@@ -1,0 +1,47 @@
+[
+  {
+    "model": "movies.review",
+    "pk": 1,
+    "fields": {
+      "movie": 1,
+      "title": "여친이랑 영화관 감",
+      "content": "자다가 혼남"
+    }
+  },
+  {
+    "model": "movies.review",
+    "pk": 2,
+    "fields": {
+      "movie": 1,
+      "title": "정말 감탄을 자아내는 몽타주",
+      "content": "이 영화의 편집은 정말 대단해!"
+    }
+  },
+  {
+    "model": "movies.review",
+    "pk": 3,
+    "fields": {
+      "movie": 2,
+      "title": "이 영화는 정말 쓰레기입니다.",
+      "content": "대체 뭔소리하는지 모르겠네요. 감독이 돈벌고싶은 욕심 없나봐요"
+    }
+  },
+  {
+    "model": "movies.review",
+    "pk": 4,
+    "fields": {
+      "movie": 5,
+      "title": "ㅇㅇㅇㅇㅇ",
+      "content": "ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"
+    }
+  },
+  {
+    "model": "movies.review",
+    "pk": 5,
+    "fields": {
+      "movie": 3,
+      "title": "꿀잼 핵꿀잼",
+      "content": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ핵꿀잼"
+    }
+  }
+]
